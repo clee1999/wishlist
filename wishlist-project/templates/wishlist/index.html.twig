@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello WishlistController!{% endblock %}
+
+{% block body %}
+    <div id="indexWishlist">
+        <div class="row">
+            <div class="col-xl-12">
+                <h1>Bonjour {{ app.user.firstname }}
+                    {{ app.user.lastname }}
+                    !</h1>
+                <p>Voici ta wishlist : </p>
+                {% for wishlist in wishlists %}
+                <p>{{ wishlist.name}}</p>
+                 <p>{{ wishlist.description}}</p>
+                    {{ dump(wishlist) }}
+                {% else %}
+                    <p>Pas de wishlist encore créé</p>
+                    <a href="{{ path('wishlist_create') }}">Créer une wishlist</a>
+                {% endfor %}
+                <a href="{{ path('wishlist_edit') }}">Modifier</a>
+{#                {% for item in wishlists.items %}#}
+{#                    <p>{{ item.name}}</p>#}
+{#                {% endfor %}#}
+            </div>
+        </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ItemController!{% endblock %}
+
+{% block body %}
+
+    {% for item in items %}
+        <p>{{ item.name}}</p>
+        <p>{{ item.link}}</p>
+        <p>{{ item.price}}</p>
+    {% else %}
+        <p>Pas de wishlist encore créé</p>
+        <a href="{{ path('item_create') }}">Créer une item</a>
+    {% endfor %}
+{% endblock %}

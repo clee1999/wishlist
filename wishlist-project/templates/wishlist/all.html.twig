@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    {% for user in users %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ user.lastname}}
+                    {{ user.firstname}}</h5></h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ dump(user)}}</h5></h6>
+                <p class="card-text"> {{ user.wishlist}}</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
